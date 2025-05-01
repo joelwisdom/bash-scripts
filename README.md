@@ -1,0 +1,1 @@
+This repo contains sample bash scripts I'm writing for practice as part of a course.
