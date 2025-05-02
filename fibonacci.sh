@@ -23,4 +23,4 @@ fib() {
     fi
 }
 
-fib $n
+fib "$n"

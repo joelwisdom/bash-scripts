@@ -47,7 +47,7 @@ text=$(<"$input_file")
 
 # Apply transformations
 if $substitute; then
-  text=$(echo "$text" | sed "s/$sub_word/$rep_word/g")
+  text="${text//${sub_word}/${rep_word}}"
 fi
 
 if $swap_case; then
@@ -55,11 +55,11 @@ if $swap_case; then
 fi
 
 if $lower; then
-  text=$(echo "$text" | tr 'A-Z' 'a-z')
+  text=$(echo "$text" | tr '[:upper:]' '[:lower:]')
 fi
 
 if $upper; then
-  text=$(echo "$text" | tr 'a-z' 'A-Z')
+  text=$(echo "$text" | tr '[:lower:]' '[:upper:]')
 fi
 
 if $reverse; then
